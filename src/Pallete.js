@@ -22,19 +22,21 @@ class Pallete extends Component {
     }
 
     render() {
-        const { colors } = this.props.pallete;
-        const { level, format } = this.state;
-        const colorBoxes = colors[level].map((color, index) => (
-            <ColorBox key={index} background={color[this.state.format]} name={color.name} />
+        const { colors, paletteName, emoji } = this.props.pallete;
+        const { level } = this.state;
+        const colorBoxes = colors[level].map(color => (
+            <ColorBox key={color.id} background={color[this.state.format]} name={color.name} />
         ))
         return (
             <div className="Pallete">
-                {/* Navbar */}
                 <NavBar level={level} changeLevel={this.changeLevel} handleChange={this.changeFormat} />
                 <div className="Pallete-colors">
                     {colorBoxes}
                 </div>
-                {/* footer */}
+                <footer className="Pallete-footer">
+                    {paletteName}
+                    <span className="emoji">{emoji}</span>
+                </footer>
             </div>
         )
     }

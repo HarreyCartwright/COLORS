@@ -33,7 +33,7 @@ class NavBar extends Component {
         return (
             <nav className="navBar">
                 <div className="logo">
-                    <a href="#">colors</a>
+                    <p>Colors</p>
                 </div>
                 <div className="slider-container">
                     <div className="slider">
